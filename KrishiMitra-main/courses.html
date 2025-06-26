@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Courses | KrishiMitra</title>
+  <style>
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .tab.active {
+      background-color: #2e7d32;
+      color: white;
+      font-weight: bold;
+    }
+
+    #search-bar {
+      max-width: 700px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+    }
+
+    .course-card {
+      margin: 1rem auto;
+      padding: 1rem;
+      max-width: 700px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #f8f8f8;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      margin-top: 10px;
+    }
+
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f9f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #2d572c;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+      border-bottom: 5px solid #ff9800;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h2 {
+      color: #2d572c;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .course-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .course-card {
+      display: flex;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .video-container {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 180px;
+    }
+
+    .details-container {
+      flex: 2;
+      padding: 1rem 1.5rem;
+    }
+
+    .details-container h3 {
+      margin: 0 0 0.5rem;
+      color: #2d572c;
+      font-size: 1.4rem;
+    }
+
+    .tags {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.8rem;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .home-button {
+      display: inline-block;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-title">
+        <h1>🌾 KrishiMitra: Bridging Tradition with Technology</h1>
+        <p class="subtitle">Empowering Rural Communities through Hands-On Learning & Digital Skills</p>
+      </div>
+      <a href="krishi_1.html" class="home-button">🏠 Home</a>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="loadCourses('technical', this)">🛠️ Technical Skills (तकनीकी कौशल)</div>
+    <div class="tab" onclick="loadCourses('computer', this)">💻 Computer Skills (कंप्यूटर कौशल)</div>
+  </div>
+
+  <!-- 🔍 Search Bar -->
+  <div id="search-bar">
+    <input type="text" id="search-input" placeholder="Search for a course..." oninput="filterCourses()" />
+  </div>
+
+  <div id="course-list">
+
+  </div>
+
+  <!-- AI Chatbot Icon -->
+<a href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" 
+target="_blank" 
+style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px;
+       display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+ <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width:30px; height:30px;">
+</a>
+<div id="bot-container" 
+  style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; 
+         box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; display: none;">
+ <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" 
+         style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+<a id="bot-toggle" onclick="toggleBot()" 
+style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px;
+       display: flex; align-items: center; justify-content: center; text-decoration: none; 
+       box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer;">
+ <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width:30px; height:30px;">
+</a>
+
+  <script>
+    let allCourses = [];
+
+    async function loadCourses(category, tabElement) {
+  try {
+    const response = await fetch(`http://localhost:5000/api/courses/${category}`);
+    if (!response.ok) throw new Error("Failed to load courses");
+
+    allCourses = await response.json();
+
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+    tabElement.classList.add('active');
+
+    document.getElementById("search-input").value = "";
+    renderCourses(allCourses);
+  } catch (err) {
+    console.error(err);
+    document.getElementById("course-list").innerHTML = "<p>Failed to load courses.</p>";
+  }
+}
+
+
+function renderCourses(courses) {
+  const list = document.getElementById("course-list");
+  if (courses.length === 0) {
+    list.innerHTML = "<p>No courses found.</p>";
+    return;
+  }
+
+  list.innerHTML = courses.map(course => {
+    const videoId = extractYouTubeVideoId(course.videoUrl);
+    const thumbnail = videoId
+      ? `https://img.youtube.com/vi/${videoId}/0.jpg`
+      : 'https://via.placeholder.com/640x360?text=No+Thumbnail';
+
+    return `
+      <div class="course-card">
+        <img src="${thumbnail}" alt="Thumbnail" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;" />
+        <div style="padding: 1rem;">
+          <h2>${course.title}</h2>
+          <p>${course.description}</p>
+          <a href="${course.videoUrl}" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #2e7d32; color: white; border-radius: 6px; text-decoration: none;">
+            Watch Video
+          </a>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+    function filterCourses() {
+      const query = document.getElementById("search-input").value.toLowerCase();
+      const filtered = allCourses.filter(course =>
+        course.title.toLowerCase().includes(query) ||
+        course.description.toLowerCase().includes(query)
+      );
+      renderCourses(filtered);
+    }
+
+
+      function toggleBot() {
+          const botContainer = document.getElementById('bot-container');
+          if (botContainer.style.display === 'none' || botContainer.style.display === '') {
+              botContainer.style.display = 'block';
+          } else {
+              botContainer.style.display = 'none';
+          }
+      }
+      function extractYouTubeVideoId(url) {
+        const regExp = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([^\s&?\/]+)/;
+        const match = url.match(regExp);
+        return match ? match[1] : null;
+      }
+      
+
+
+    window.onload = () => loadCourses('technical', document.querySelector('.tab'));
+  </script>
+</body>
+</html>

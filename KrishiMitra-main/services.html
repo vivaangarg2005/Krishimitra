@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KrishiMitra | Services</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f8f4;
+      color: #333;
+    }
+    header {
+      background-color: #2d572c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    .container {
+      padding: 2rem;
+    }
+    .section {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+    }
+    .section img {
+      max-width: 250px;
+      border-radius: 10px;
+    }
+    .section-content {
+      flex: 1;
+    }
+    .section h2 {
+      margin-top: 0;
+      color: #4a6c2d;
+    }
+    .section p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .btn {
+      margin-top: 1rem;
+      display: inline-block;
+      background-color: #2d572c;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .home-button {
+      text-decoration: none;
+      color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2d572c;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Services</h1>
+    <p>Empowering Rural India, One Step at a Time</p>
+    <a href="krishi_1.html" class="home-button">🏠 Home</a>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <img src="photos/job.jpg" alt="Employment Opportunities">
+      <div class="section-content">
+        <h2>Employment Opportunities</h2>
+        <p>Find part-time, seasonal or skill-based jobs suited for rural communities. Use filters like age, location, and skill level.</p>
+        <a href="explore_jobs.html" class="btn">Explore Jobs</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="photos/skills.jpg" alt="Skill Development Programs">
+      <div class="section-content">
+        <h2>Skill Development Programs</h2>
+        <p>Access free courses and workshops with our NGO/Government partners. Topics range from farming tech to digital literacy.</p>
+        <a href="courses.html" class="btn">Go to Upskills</a>
+      </div>
+    </div>
+
+    <div class="section" id="rental">
+        <img src="photos/rentals.jpg" alt="Equipment Rental Services">
+        <div class="section-content">
+          <h2>Equipment Rental Services</h2>
+          <p>Rent essential equipment like tractors, threshers, and irrigation pumps from nearby vendors at affordable rates.</p>
+          <a href="book_now.html" class="btn">Book Now</a>
+        </div>
+      </div>
+      
+
+    <div class="section">
+      <img src="photos/schemaas.jpg" alt="Government Schemes">
+      <div class="section-content">
+        <h2>Govt Schemes Explained</h2>
+        <p>Learn about key schemes like MGNREGA, PM-Kisan, and more — eligibility, benefits, and how to apply, all simplified for you.</p>
+        <a href="learn_more.html" class="btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <img src="photos/women_emp.jpeg" alt="Women Empowerment">
+      <div class="section-content">
+        <h2>Women Empowerment Cell</h2>
+        <p>Specially curated jobs, support groups, and training sessions for rural women to grow, earn and connect.</p>
+        <a href="join_the_movement.html" class="btn">Join the Movement</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 KrishiMitra. All rights reserved.
+  </footer>
+  <!-- Updated AI Chatbot Code -->
+  <!-- Remove or replace previous chatbot anchor -->
+<a id="bot-main" href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+</a>
+<div id="bot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; display: none;">
+    <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+<a id="bot-toggle" onclick="toggleBot()" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer;">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+</a>
+<script>
+  function toggleBot() {
+    const botContainer = document.getElementById('bot-container');
+    if (botContainer.style.display === 'none' || botContainer.style.display === '') {
+      botContainer.style.display = 'block';
+    } else {
+      botContainer.style.display = 'none';
+    }
+  }
+</script>
+</body>
+</html>

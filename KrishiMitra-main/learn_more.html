@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Govt Schemes | Krishimitra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f5f3;
+      color: #1e1e1e;
+    }
+
+    header {
+      background: linear-gradient(90deg, #2e562a, #3c7433);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #2e562a;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #24461f;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+      margin-bottom: 30px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+.card .icon-area {
+  background: #eaf3e9;
+  width: 183px;
+  height: 183px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card .icon-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+    .card .content {
+      padding: 24px;
+      flex: 1;
+    }
+
+    .card .content h2 {
+      color: #2e562a;
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .card .content p {
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background-color: #2e562a;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 30px;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #24461f;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+      }
+
+      .card .icon-area {
+        width: 100%;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="krishi_1.html" class="home-button">🏠 Home</a>
+    <h1>📄 Government Schemes Explained</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <div class="icon-area">
+        <img src="photos/mgnrega.webp" alt="MGNREGA Image">
+      </div>
+      <div class="content">
+        <h2>MGNREGA (Rural Employment Guarantee)</h2>
+        <p><strong>Eligibility:</strong> Rural households willing to do unskilled manual work.</p>
+        <p><strong>Benefit:</strong> 100 days of paid work every year through local public projects.</p>
+        <p><strong>Apply via:</strong> Local Gram Panchayat (Job card issued post-verification).</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon-area">
+        <img src="photos/pmkisan.jpeg" alt="PM-Kisan Image">
+      </div>
+      <div class="content">
+        <h2>PM-Kisan (Income Support to Farmers)</h2>
+        <p><strong>Eligibility:</strong> Landholding farmers with cultivable land.</p>
+        <p><strong>Benefit:</strong> ₹6,000 per year in 3 equal installments sent directly to your bank.</p>
+        <p><strong>Apply via:</strong> <a href="https://pmkisan.gov.in" target="_blank">pmkisan.gov.in</a> or local agriculture officer.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="icon-area">
+        <img src="photos/pmfby.jpg" alt="PMFBY Image">
+      </div>
+      <div class="content">
+        <h2>PMFBY (Crop Insurance)</h2>
+        <p><strong>Eligibility:</strong> Farmers growing notified crops.</p>
+        <p><strong>Benefit:</strong> Insurance cover for crop loss due to natural disasters.</p>
+        <p><strong>Apply via:</strong> Enroll through local agriculture office or banks.</p>
+      </div>
+    </div>
+
+    <a href="#" class="back-btn">⬅ Back to Dashboard</a>
+
+  </div>
+
+</body>
+</html>

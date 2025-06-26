@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmers' Connect Community</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f5f3;
+      color: #222;
+    }
+
+    header {
+      background-color: #2e562a;
+      color: white;
+      padding: 50px 20px 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #2e562a;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #1e3e1a;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: center;
+      font-size: 18px;
+      color: #3a3a3a;
+    }
+
+    .community-grid {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .profile-card {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .profile-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .profile-card h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #2e562a;
+    }
+
+    .profile-card p {
+      color: #444;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .cta a {
+      background-color: #2e562a;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #1e3e1a;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="krishi.html" class="home-button">🏠 Home</a>
+    <h1>🌾 Join the Farmers’ Connect Community</h1>
+  </header>
+
+  <div class="intro">
+    <p>Welcome! Connect with other farmers, share your stories, find trading partners, or collaborate to form local cooperatives. Let’s grow together! 🌱</p>
+  </div>
+
+  <div class="community-grid">
+    <div class="profile-card">
+      <img src="photos/Sunita_Devi.jpg" alt="Sunita Devi" />
+      <h3>Sunita Devi</h3>
+      <p>From Bihar | Grows: Rice, pulses | Seeking tips on organic composting</p>
+    </div>
+
+    <div class="profile-card">
+      <img src="photos/Raju_Bhai.jpg" alt="Raju Bhai" />
+      <h3>Raju Bhai</h3>
+      <p>From Gujarat | Dairy + Wheat | Wants to join a milk collective</p>
+    </div>
+
+    <div class="profile-card">
+      <img src="photos/Shobha_Tai.jpg" alt="Shobha Tai" />
+      <h3>Shobha Tai</h3>
+      <p>From Maharashtra | Sells pickles and veggies | Looking for market access</p>
+    </div>
+
+    <div class="profile-card">
+      <img src="photos/Iqbal_Singh.jpg" alt="Iqbal Singh" />
+      <h3>Iqbal Singh</h3>
+      <p>From Punjab | Grows wheat and mustard | Wants to start YouTube tips</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a href="#">📬 Create Your Farmer Profile</a>
+  </div>
+
+</body>
+</html>

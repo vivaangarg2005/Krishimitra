@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KrishiMitra Advisory</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Styling -->
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('photos/crops.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #2d572c;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #2d572c;
+      font-weight: 500;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #2d572c;
+      border-radius: 10px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #2d572c;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1b3d1b;
+    }
+
+    #result {
+      display: none;
+      margin-top: 25px;
+      padding: 15px;
+      background-color: rgba(240, 255, 240, 0.95);
+      border-radius: 10px;
+      border-left: 5px solid #2d572c;
+      font-size: 0.95rem;
+      color: #2d572c;
+    }
+
+    #bot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2d572c;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    #bot-toggle img {
+      width: 30px;
+      height: 30px;
+    }
+
+    #bot-container {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: none;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+        border-radius: 15px;
+      }
+
+      button {
+        font-size: 0.95rem;
+      }
+    }
+
+    .home-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      background-color: #2d572c;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #1b3d1b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <a href="krishi.html" class="home-button">🏠 Home</a>
+    <h2>🌾 KrishiMitra Advisory</h2>
+    <form id="advisory-form">
+      <label for="soil">Soil Type:</label>
+      <select id="soil" name="soil">
+        <option value="loamy">Loamy</option>
+        <option value="clayey">Clayey</option>
+        <option value="sandy">Sandy</option>
+        <option value="black">Black</option>
+      </select>
+
+      <label for="weather">Weather Condition:</label>
+      <select id="weather" name="weather">
+        <option value="dry">Dry</option>
+        <option value="humid">Humid</option>
+        <option value="cool">Cool</option>
+      </select>
+
+      <label for="market">Market Demand:</label>
+      <select id="market" name="market">
+        <option value="high">High</option>
+        <option value="moderate">Moderate</option>
+        <option value="low">Low</option>
+      </select>
+
+      <button type="submit">Get Crop Suggestions</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <!-- Chatbot -->
+  <div id="bot-container">
+    <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
+
+  <a id="bot-toggle" onclick="toggleBot()">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" />
+  </a>
+
+  <script>
+    function toggleBot() {
+      const botContainer = document.getElementById('bot-container');
+      botContainer.style.display = (botContainer.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Suggest crops based on input (mock logic)
+    document.getElementById("advisory-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const soil = document.getElementById("soil").value;
+      const weather = document.getElementById("weather").value;
+      const market = document.getElementById("market").value;
+      const resultBox = document.getElementById("result");
+
+      // Simple mock logic for demonstration
+      let suggestion = "";
+
+      if (soil === "loamy" && weather === "dry" && market === "high") {
+        suggestion = "Suggested Crops: Wheat, Mustard, Barley";
+      } else if (soil === "clayey" && weather === "humid") {
+        suggestion = "Suggested Crops: Rice, Sugarcane, Jute";
+      } else {
+        suggestion = "Suggested Crops: Maize, Sorghum, Pulses";
+      }
+
+      resultBox.innerText = suggestion;
+      resultBox.style.display = "block";
+    });
+  </script>
+</body>
+</html>

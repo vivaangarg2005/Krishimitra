@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmer Registration Form</title>
+  <link rel="stylesheet" href="registration_styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>🚜 Farmer Registration Form</h2>
+
+    <form id="registerForm">
+      <label>👤 Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required />
+
+      <label>📅 Date of Birth</label>
+      <input type="date" id="dob" required />
+
+      <label>🆔 Aadhar Number</label>
+      <input type="text" id="aadhar" placeholder="Enter Aadhar number" required />
+
+      <label>👥 Username</label>
+      <input type="text" id="username" placeholder="Choose a username" required />
+
+      <label for="passwordInput">🔒 Password</label>
+      <div class="password-container">
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter a password"
+          required
+        />
+        <div class="show-password-container">
+          <input type="checkbox" id="showPassword" />
+          <label for="showPassword"> Show Password</label>
+        </div>
+      </div>
+
+      <label>📞 Phone Number</label>
+      <input type="tel" id="phone" placeholder="Enter phone number" required />
+
+      <label>📧 Email Address</label>
+      <input type="email" id="email" placeholder="Enter email address" required />
+
+      <label>🏡 Address</label>
+      <textarea id="address" placeholder="Enter your address"></textarea>
+
+      <label>🌍 Select Language</label>
+      <select id="language">
+        <option>English</option>
+        <option>Hindi</option>
+        <option>Marathi</option>
+        <option>Tamil</option>
+      </select>
+
+      <label>🌱 Select Farming Skill</label>
+      <select id="farmingSkill">
+        <option>🌱 Organic Farming</option>
+        <option>🌾 Crop Cultivation</option>
+        <option>🐄 Livestock Rearing</option>
+        <option>🐟 Aquaculture</option>
+        <option>🍎 Horticulture</option>
+        <option>🌻 Floriculture</option>
+        <option>🚜 Precision Farming</option>
+        <option>🧪 Soil Testing</option>
+        <option>☀️ Solar Farming</option>
+        <option>🐝 Beekeeping</option>
+        <option>🍄 Mushroom Farming</option>
+        <option>🥑 Agroforestry</option>
+        <option>🍷 Viticulture (Grape Farming)</option>
+        <option>🛠 Farm Equipment Handling</option>
+        <option>🚜 Tractor Operation</option>
+        <option>🔬 Agricultural Research</option>
+        <option>📈 Agribusiness Management</option>
+        <option value="other">➕ Other</option>
+      </select>
+
+      <div id="otherSkillContainer" class="hidden">
+        <label>📝 Specify Your Skill</label>
+        <input type="text" id="otherSkill" placeholder="Enter your farming skill" />
+      </div>
+
+      <div class="kyf-container">
+        <input type="checkbox" id="kyf" />
+        <label for="kyf">📜 Join KYF (Know Your Farmer)</label>
+      </div>
+
+      <div id="kyfFields" class="hidden">
+        <div class="land-size-container">
+          <label>🌿 Land Size</label>
+          <div class="land-input-group">
+            <input type="number" id="landSize" placeholder="Enter land size" />
+            <select id="landUnit">
+              <option>Acres</option>
+              <option>Hectares</option>
+              <option>Guj</option>
+            </select>
+          </div>
+        </div>
+
+        <label>💰 Annual Income</label>
+        <input type="number" id="income" placeholder="Enter annual income" />
+
+        <label class="checkbox-container">
+          <input type="checkbox" id="govSchemes" />
+          Interested in Government Schemes
+        </label>
+      </div>
+
+      <button type="submit">✅ Register Now</button>
+    </form>
+  </div>
+<!-- AI Chatbot Code -->
+  <a id="bot-main" href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+  </a>
+  <div id="bot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; display: none;">
+    <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
+  <a id="bot-toggle" onclick="toggleBot()" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer;">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+  </a>
+  <script>
+    function toggleBot() {
+      const botContainer = document.getElementById('bot-container');
+      if (botContainer.style.display === 'none' || botContainer.style.display === '') {
+        botContainer.style.display = 'block';
+      } else {
+        botContainer.style.display = 'none';
+      }
+    }
+  </script>
+  <script src="registration_script.js"></script>
+</body>
+</html>

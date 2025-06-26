@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiMitra - Empowering Farmers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+    body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Language Selection Screen */
+#language-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: url('photos/farming1.jpg') no-repeat center center/cover;
+    color: white; /* Changed to white for default */
+    flex-direction: column;
+}
+
+#language-selection h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #004d00; /* Dark green for visibility against sky */
+    text-shadow: 1px 1px 4px rgba(255,255,255,0.4); /* Light shadow to improve contrast */
+}
+
+#language-selection h2.hindi {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* Better readability on light parts */
+}
+
+#language-selection h2.languages {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #f0f0f0; /* Brighter beige */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+#language-selection h2.select-language {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+#language-selection .auth-buttons {
+    position: static !important;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.language-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #ffcc00;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: black;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2); /* Slight shadow for buttons */
+}
+
+.language-buttons button img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Hover Effect for Buttons */
+.language-buttons button:hover {
+    transform: translateY(-5px);
+    background-color: #FFC107;
+    color: black;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    z-index: 10;
+    position: relative;
+}
+
+#landing-page, #main-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+#landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; /* Ensures full height */
+    width: 100%;
+    background: url('photos/agriculture.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    box-sizing: border-box;
+}
+
+.landing-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 80%; /* Ensures it doesn't overflow */
+    text-align: center;
+}
+
+.landing-content h1 {
+    font-size: 2.5rem;
+    font-family: 'Press Start 2P';
+}
+
+.landing-content p {
+    font-size: 1rem;
+}
+
+.landing-content button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #ffcc00;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.landing-content button:hover {
+    background-color: #e6b800;
+   
+}
+
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2E8B57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif; /* Use Poppins for the header */
+        }
+
+        header h1 {
+            font-size: 3.5rem; /* Reduced font size */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+            font-family: 'Press Start 2P', cursive; /* Press Start 2P for the main heading */
+        }
+
+        header p {
+            font-size: 1.5rem; /* Reduced font size */
+            text-align: center;
+            margin-top: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            background-color: #2E8B57;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem; /* Reduced font size */
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        #google_translate_element {
+            display: none;
+        }
+
+        /* Image Slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slider img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-nav button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.slider-nav button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+#about-us {
+    padding: 50px 20px;
+    background-color: #f30303;
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#about-us p {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+
+        html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+div.page {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+        footer {
+            background-color: #d9e6d2;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem; /* Smaller font size for mobile */
+            }
+
+            nav ul li a {
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
+
+            .landing-content h1 {
+                font-size: 2rem; /* Smaller font size for mobile */
+            }
+        }
+        /* Auth Buttons */
+        .auth-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons button {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            border: none;
+            background-color: #ffcc00;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: black;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+        }
+
+        .auth-buttons button:hover {
+            transform: translateY(-2px);
+            background-color: #FFC107;
+        }
+
+        /* Responsive design for auth buttons */
+        @media (max-width: 768px) {
+            .auth-buttons {
+                top: 10px;
+                right: 10px;
+            }
+            .auth-buttons button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }    
+
+    </style>
+</head>
+<body>
+    <!-- Language Selection Screen -->
+    <div id="language-selection">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <h1>Welcome to Krishimitra</h1>
+            <h2 class="hindi">कृषिमित्र में आपका स्वागत है</h2>
+            <h2 class="languages">
+                कृषिमित्रमध्ये स्वागत आहे | కృషిమిత్రకు స్వాగతం | কৃষিমিত্রে আপনাকে স্বাগতম | கிருஷிமித்ரா வரவேற்கிறது
+            </h2>
+    
+            <div class="auth-buttons" style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+                <button onclick="location.href='login.html'">Login</button>
+                <button onclick="location.href='registration_index.html'">Register</button>
+            </div>
+        </div>
+    </div>
+    
+ 
+
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <div class="landing-content">
+            <h1>कृषिमित्र | <strong>KrishiMitra</strong> | கிருஷிமித்ரா | কৃষিমিত্র | કૃષિમિત્ર</h1>
+            <p>Empowering Farmers</p>
+            <button onclick="enterSite()">Enter</button>
+        </div>
+    </div>
+
+    <!-- Main Content after Language Selection -->
+    <div id="main-content">
+        <header style="background: url('photos/yourimage3.jpg') no-repeat center center/cover; color: navy; padding: 70px 35px; text-align: center; background-size: cover;">
+            <h1>KRISHIMITRA</h1>
+            <p>Bridging Technology and Farming</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav>
+            <ul>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="market.html"><i class="fas fa-shopping-cart"></i> Market</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="courses.html"><i class="fas fa-book"></i> Upskills</a></li>
+                <li><a href="weather.html">Weather forecast</a></li>
+                <li><a href="Crop advise.html">Crop Advisory</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="features.html">Features</a></li>
+
+
+            </ul>
+        </nav>
+
+        <!-- Image Slider -->
+<div class="slider-container" id="slider-container">
+    <div class="slider" id="slider">
+        <img src="photos/farmer___page-0001.jpg">
+        <img src="photos/mnrega_page-0001.jpg">
+        <img src="photos/farming_page-0001.jpg">
+        <img src="photos/farmer__mobile_page-0001.jpg">
+        <img src="photos/schemes.jpg">
+    </div>
+    <div class="slider-nav">
+        <button onclick="prevSlide()">&#10094;</button>
+        <button onclick="nextSlide()">&#10095;</button>
+    </div>
+</div>
+<section id="about-us" style="padding: 50px 20px; background-color: #f0f7eb;">
+    <div style="max-width: 1000px; margin: auto; text-align: center;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #2e7d32;">About KrishiMitra</h2>
+      <p style="font-size: 1.2rem; color: #444;">
+        KrishiMitra is your one-stop solution to bridging technology and farming. 
+        We aim to empower rural communities with access to modern tools, knowledge, and markets—turning traditional farming into a thriving digital journey.
+      </p>
+      <img src="photos/farmers gang.jpg"alt="Image1">
+    </div>
+  </section>
+  
+
+
+
+
+    <script>
+
+
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,ta,bn,gu',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+
+function selectLanguage(lang) {
+    localStorage.setItem('selectedLanguage', lang);
+    document.getElementById('language-selection').style.display = 'none';
+    document.getElementById('landing-page').style.display = 'flex';
+    setTimeout(() => {
+        document.getElementById('landing-page').style.opacity = '1';
+    }, 100);
+}
+
+let currentSlide = 0; // Track the current slide
+
+function enterSite() {
+    let mainContent = document.getElementById('main-content');
+    document.getElementById('landing-page').style.display = 'none';
+    mainContent.style.display = 'block';
+    setTimeout(() => {
+        mainContent.style.opacity = '1';
+        document.getElementById('slider-container').style.display = 'block'; // Show slider after entering
+    }, 100);
+}
+
+function nextSlide() {
+    const slides = document.querySelectorAll('.slider img');
+    if (currentSlide < slides.length - 1) {
+        currentSlide++;
+    } else {
+        currentSlide = 0; // Loop back to first slide
+    }
+    updateSlider();
+}
+
+function prevSlide() {
+    const slides = document.querySelectorAll('.slider img');
+    if (currentSlide > 0) {
+        currentSlide--;
+    } else {
+        currentSlide = slides.length - 1; // Loop back to last slide
+    }
+    updateSlider();
+}
+
+function updateSlider() {
+    const slider = document.getElementById('slider');
+    slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
+}
+
+// Auto-slide function
+let autoSlideInterval;
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
+}
+
+// Start auto-slide when the site loads
+window.onload = function() {
+    startAutoSlide();
+};
+function nextSlide() {
+    clearInterval(autoSlideInterval); // Stop auto-slide on manual interaction
+    const slides = document.querySelectorAll('.slider img');
+    if (currentSlide < slides.length - 1) {
+        currentSlide++;
+    } else {
+        currentSlide = 0;
+    }
+    updateSlider();
+    startAutoSlide(); // Restart auto-slide after manual change
+}
+
+function prevSlide() {
+    clearInterval(autoSlideInterval); // Stop auto-slide on manual interaction
+    const slides = document.querySelectorAll('.slider img');
+    if (currentSlide > 0) {
+        currentSlide--;
+    } else {
+        currentSlide = slides.length - 1;
+    }
+    updateSlider();
+    startAutoSlide(); // Restart auto-slide after manual change
+}
+function toggleBot() {
+    const botContainer = document.getElementById('bot-container');
+    if (botContainer.style.display === 'none' || botContainer.style.display === '') {
+        botContainer.style.display = 'block';
+    } else {
+        botContainer.style.display = 'none';
+    }
+}
+
+
+window.onload = () => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const selectedLang = localStorage.getItem('selectedLanguage');
+
+    if (isLoggedIn) {
+        enterSite(); // Go straight to main content
+    } else if (selectedLang) {
+        // Show landing page (with login/register)
+        document.getElementById('language-selection').style.display = 'none';
+        document.getElementById('landing-page').style.display = 'flex';
+        setTimeout(() => {
+            document.getElementById('landing-page').style.opacity = '1';
+        }, 100);
+    } else {
+        document.getElementById('language-selection').style.display = 'flex';
+    }
+};
+
+
+
+// Example for a simple tab
+document.querySelector("#tab1").addEventListener("click", function() {
+  // Push a new state for tab 1
+  history.pushState({ page: "tab1" }, "", "#tab1");
+  // Show the content for tab1, hide others
+  showTabContent("tab1");
+});
+
+document.querySelector("#tab2").addEventListener("click", function() {
+  // Push a new state for tab 2
+  history.pushState({ page: "tab2" }, "", "#tab2");
+  // Show the content for tab2, hide others
+  showTabContent("tab2");
+});
+
+// Function to show/hide tab contents
+function showTabContent(tabId) {
+  document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
+  document.querySelector(`#${tabId}`).classList.remove("hidden");
+}
+
+// This will be used when the user presses the back/forward button
+window.addEventListener("popstate", function(event) {
+  if (event.state) {
+    showTabContent(event.state.page);
+  }
+});
+
+</script>
+<footer style="background-color: #d9e6d2;">
+    <p>&copy; 2025 KrishiMitra. Empowering Rural India.</p>
+</footer>
+<!-- AI Chatbot Icon -->
+<a href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width:30px; height:30px;">
+  </a>
+  <div id="bot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; display: none;">
+      <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
+  
+  <a id="bot-toggle" onclick="toggleBot()" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); cursor: pointer;">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+  </a>
+</body>
+</html>

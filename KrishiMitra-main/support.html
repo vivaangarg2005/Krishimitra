@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrishiMitra | Support</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f5ec;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #2d572c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1.4rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2d572c;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .faq {
+      background: #f1f8e9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq h3 {
+      margin: 0;
+      color: #215527;
+      font-size: 1.1rem;
+    }
+    .faq p {
+      margin-top: 5px;
+    }
+    .faq button {
+      background-color: #2d572c;
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .faq button:hover {
+      background-color: #3c7c3b;
+    }
+    .voice-assist {
+      text-align: center;
+      padding: 1rem;
+      background: #fff3e0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .mic-btn {
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .mic-btn:hover {
+      background-color: #e68900;
+    }
+    .helpline {
+      background: #e3f2fd;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .home-button {
+      display: inline-block;
+      background-color: #2d572c;
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+
+    footer {
+      text-align: center;
+      background: #2d572c;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Support Center | मदद की जरुरत?</h1>
+  <p>Arey bhai! Koi bhi dikkat ho, yaha par mil jayegi madad! 🚜</p>
+  <a href="krishi_1.html" class="home-button">🏠 Home</a>
+</header>
+
+<div class="container">
+
+  <div class="section voice-assist">
+    <h2>🎙️ Voice Assistance</h2>
+    <button class="mic-btn" onclick="startSpeechRecognition()">🎤 Pucho apni samasya</button>
+    <p id="recognized-text">👉 Yaha aapka sawaal dikhega...</p>
+  </div>
+
+  <div class="section">
+    <h2>❓ Frequently Asked Questions</h2>
+    
+    <div class="faq">
+      <div>
+        <h3>✅ Kaam kaise milega?</h3>
+        <p>Bas "Employment Opportunities" wale section pe jao aur apply karo. 😃</p>
+      </div>
+      <button onclick="speak('Kaam kaise milega? Bas Employment Opportunities wale section pe jao aur apply karo.')">🔊</button>
+    </div>
+    
+    <div class="faq">
+      <div>
+        <h3>📱 Kya mujhe phone pe bhi kaam milega?</h3>
+        <p>Haan bilkul! Aap SMS ya WhatsApp ke zariye bhi kaam dhoond sakte ho. 🚀</p>
+      </div>
+      <button onclick="speak('Haan bilkul! Aap SMS ya WhatsApp ke zariye bhi kaam dhoond sakte ho.')">🔊</button>
+    </div>
+
+    <div class="faq">
+      <div>
+        <h3>💰 Payment kaise milega?</h3>
+        <p>Aapke bank ya UPI pe direct paise bheje jayenge. Safe aur fast! 💵</p>
+      </div>
+      <button onclick="speak('Aapke bank ya UPI pe direct paise bheje jayenge. Safe aur fast!')">🔊</button>
+    </div>
+  </div>
+
+  <div class="section helpline">
+    <h2>📞 Helpline Numbers</h2>
+    <p><strong>KrishiMitra Support:</strong> 1800-XXX-XXXX</p>
+    <p><strong>Women’s Helpline:</strong> 1091</p>
+    <p><strong>State-wise Agricultural Support:</strong> <a href="#">Click Here</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 KrishiMitra. Bharat Ke Kisano Ke Liye.</p>
+</footer>
+<!-- Updated AI Chatbot Toggle Code -->
+<div id="bot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; display: none;">
+    <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+<a id="bot-toggle" onclick="toggleBot()" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer;">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+</a>
+<script>
+function toggleBot() {
+    const botContainer = document.getElementById('bot-container');
+    if (botContainer.style.display === 'none' || botContainer.style.display === '') {
+        botContainer.style.display = 'block';
+    } else {
+        botContainer.style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>

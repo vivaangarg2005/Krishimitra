@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KrishiMitra - Weather Forecast</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: url("photos/weather.jpg") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+      }
+
+      .container h1 {
+        margin-bottom: 20px;
+        color: #2d572c;
+        font-size: 1.8rem;
+      }
+
+      label {
+        display: block;
+        margin: 15px 0 5px;
+        text-align: left;
+        font-weight: 600;
+        color: #2d572c;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input {
+        width: 80%;
+        padding: 10px;
+        border: 2px solid #2d572c;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+      }
+
+      button {
+        background-color: #2d572c;
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #1b3d1b;
+      }
+
+      .home-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 10px 15px;
+        background-color: transparent;
+        color: black;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
+      #forecast {
+        display: none;
+        margin-top: 25px;
+        padding: 20px;
+        background-color: rgba(240, 255, 240, 0.95);
+        border-radius: 15px;
+        border-left: 5px solid #2d572c;
+        color: #2d572c;
+        font-weight: 500;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 25px;
+        }
+
+        .container h1 {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌾 KrishiMitra Weather Forecast</h1>
+      <a href="krishi_1.html" class="home-button">🏠 Home</a>
+      <form id="weather-form">
+        <label for="location">Enter Your Location:</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="e.g., Delhi"
+          required
+        />
+        <button type="submit">Get Forecast</button>
+      </form>
+
+      <div id="forecast"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("weather-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const location = document
+            .getElementById("location")
+            .value.trim()
+            .toLowerCase();
+          const resultBox = document.getElementById("forecast");
+          let message = "";
+
+          if (location.includes("delhi") || location.includes("rajasthan")) {
+            message =
+              "☀️ It's expected to be hot and dry. Consider drought-resistant crops like millet or pulses.";
+          } else if (
+            location.includes("kerala") ||
+            location.includes("assam")
+          ) {
+            message =
+              "🌧️ Expect humid and wet weather. Ideal for rice, jute, and spices.";
+          } else if (
+            location.includes("punjab") ||
+            location.includes("haryana")
+          ) {
+            message =
+              "🌤️ Moderate climate. Wheat, mustard, and sugarcane work well.";
+          } else if (
+            location.includes("jammu") ||
+            location.includes("himachal")
+          ) {
+            message =
+              "❄️ Cooler zones ahead. Apples, potatoes, and barley could be ideal.";
+          } else {
+            message =
+              "🌾 Weather data unavailable for the region. Choose crops based on soil type and traditional practices.";
+          }
+
+          resultBox.innerHTML = `<p>${message}</p>`;
+          resultBox.style.display = "block";
+        });
+    </script>
+  </body>
+</html>

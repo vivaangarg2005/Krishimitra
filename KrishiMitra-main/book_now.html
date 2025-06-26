@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Equipment | Krishimitra</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f3;
+      color: #333;
+    }
+
+    header {
+      background-color: #2e562a;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 35px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+      color: #2e562a;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #d9e6d9;
+      padding-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #2e562a;
+      box-shadow: 0 0 4px #a7d3a7;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .submit-btn {
+      margin-top: 25px;
+      background-color: #2e562a;
+      color: white;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #24461f;
+    }
+    .equipment-list {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #e8f5e9;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      border: 1px solid #c5e1a5;
+    }
+    
+    .equipment-list h2 {
+      color: #2e562a;
+      margin-bottom: 20px;
+      font-size: 22px;
+      border-bottom: 2px solid #aed581;
+      padding-bottom: 8px;
+    }
+    
+    .equipment-item {
+      background: #ffffff;
+      border: 1px solid #d0e6cc;
+      border-left: 5px solid #2e562a;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(46, 86, 42, 0.05);
+      transition: transform 0.2s ease;
+    }
+    
+    .equipment-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(46, 86, 42, 0.1);
+    }
+    
+    .equipment-item strong {
+      display: block;
+      font-size: 18px;
+      color: #2e562a;
+      margin-bottom: 6px;
+    }
+    
+    .equipment-item p {
+      margin: 4px 0;
+      font-size: 15px;
+      color: #444;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .container {
+        margin: 30px 20px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="krishi_1.html" class="home-button">🏠 Home</a>
+    <h1>🚜 Book Farm Equipment – Krishimitra</h1>
+  </header>
+
+  <div class="container">
+    <h2>Rental Booking Form</h2>
+
+    <form id="booking-form">
+      <label for="name">👤 Farmer's Name</label>
+      <input type="text" name="name" required placeholder="e.g. Ramesh Kumar">
+
+      <label for="phone">📞 Phone Number</label>
+      <input type="tel" name="phone" required placeholder="10-digit number">
+
+      <label for="location">📍 Village / Town</label>
+      <input type="text" name="location" required placeholder="e.g. Barabanki, UP">
+
+      <label for="equipment">🔧 Equipment</label>
+      <select id="equipment" name="equipment" required>
+        <option value="">-- Choose Equipment --</option>
+        <option value="tractor">Tractor</option>
+        <option value="thresher">Thresher</option>
+        <option value="irrigation_pump">Irrigation Pump</option>
+        <option value="harvester">Harvester</option>
+        <option value="seed_drill">Seed Drill</option>
+        <option value="plough">Plough</option>
+      </select>
+
+      <label for="availableFrom">📅 Available From</label>
+      <input type="date" name="availableFrom" required>
+
+      <label for="duration">⏱️ Duration (in Days)</label>
+      <input type="number" name="duration" required min="1" placeholder="e.g. 3">
+
+      <label for="notes">📝 Additional Notes</label>
+      <textarea name="notes" placeholder="Any specific requirements..."></textarea>
+
+      <button class="submit-btn" type="submit">Submit Booking</button>
+    </form>
+
+    <div class="equipment-list">
+      <h2>Available Equipment</h2>
+      <div id="equipment-container"></div>
+    </div>
+  </div>
+
+  <script>
+    async function loadEquipment() {
+      try {
+        const res = await fetch('http://localhost:5000/api/equipment');
+        const data = await res.json();
+        const container = document.getElementById('equipment-container');
+        container.innerHTML = data.map(item => `
+          <div class="equipment-item">
+            <strong>${item.equipment}</strong>
+            <p><b>Location:</b> ${item.location}</p>
+            <p><b>From:</b> ${new Date(item.availableFrom).toLocaleDateString()}</p>
+            <p><b>Duration:</b> ${item.duration} day(s)</p>
+          </div>
+        `).join('');
+      } catch (err) {
+        console.error("Failed to load equipment:", err);
+        document.getElementById('equipment-container').innerHTML = `<p style="color:red;">Unable to load equipment list.</p>`;
+      }
+    }
+
+    document.getElementById('booking-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      const res = await fetch('http://localhost:5000/api/equipment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        alert('Booking submitted!');
+        this.reset();
+        loadEquipment();
+      } else {
+        alert('Booking failed. Please try again.');
+      }
+    });
+
+    window.onload = loadEquipment;
+  </script>
+
+</body>
+</html>

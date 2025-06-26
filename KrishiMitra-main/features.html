@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Features - KrishiMitra</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5fff2;
+        }
+
+        section#features {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f0f7eb;
+        }
+
+        section#features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #3a6b35;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #5fa053;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #2e5939;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #2d572c;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+
+        .home-button:hover {
+            background-color: #3c7c3b;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <a href="krishi_1.html" class="home-button">🏠 Home</a>
+
+    <section id="features">
+        <h2>Platform Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-tractor"></i>
+                <h3>Equipment Rentals</h3>
+                <p>Access modern tools and machinery on-demand to boost productivity and reduce manual labor.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Crop Advisory</h3>
+                <p>Receive personalized suggestions based on soil type, weather, and market conditions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-cloud-sun"></i>
+                <h3>Weather Forecasts</h3>
+                <p>Stay ahead of changing conditions with real-time weather alerts and predictions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-store"></i>
+                <h3>e-Market Access</h3>
+                <p>Buy and sell produce directly through verified networks to maximize profits.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Upskilling Programs</h3>
+                <p>Learn new-age farming techniques and digital skills through certified training.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>24x7 Support</h3>
+                <p>Get expert help anytime via our multilingual helpline and chatbot support.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AI Chatbot Icon -->
+    <a href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width:30px; height:30px;">
+    </a>
+    <div id="bot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; display: none;">
+        <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+    <a id="bot-toggle" onclick="toggleBot()" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer;">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width:30px; height:30px;">
+    </a>
+    <script>
+        function toggleBot() {
+            const botContainer = document.getElementById('bot-container');
+            if (botContainer.style.display === 'none' || botContainer.style.display === '') {
+                botContainer.style.display = 'block';
+            } else {
+                botContainer.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
