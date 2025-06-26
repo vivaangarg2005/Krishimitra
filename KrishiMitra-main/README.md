@@ -80,6 +80,6 @@ npm install express mongoose dotenv bcrypt jsonwebtoken cors
 
 ## 📬 Contact
 
-Built with love by **Team KrishiMitra** 💚  
-Email us at: ash.madhumita@gmail.com OR  maxraghavsharma@gmail.com
+Built with love by **Team Infinity Minds** 💚  
+
 
